@@ -21,6 +21,7 @@
       <nav class="desktop-nav" aria-label="主导航"><a href="#new">本周上新</a><a href="#popular">人气好物</a><a href="#story">我们的选择</a></nav>
       <div class="header-actions">
         <button class="icon-button search-trigger" type="button" aria-label="搜索商品" title="搜索"><i data-lucide="search"></i></button>
+        <button class="orders-button order-trigger" type="button" aria-label="查看我的订单"><i data-lucide="receipt-text"></i><span>我的订单</span><span class="order-count" aria-label="本机订单记录数量">0</span></button>
         <button class="cart-button cart-trigger" type="button" aria-label="打开购物车"><i data-lucide="shopping-bag"></i><span class="cart-label">购物袋</span><span class="cart-count" aria-label="购物车商品数量">0</span></button>
       </div>
     </header>
@@ -60,10 +61,34 @@
       <section class="newsletter"><div><p class="eyebrow light">每周一封好物来信</p><h2>新鲜到货，先告诉你。</h2></div><form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="email">邮箱地址</label><input id="email" name="email" type="email" placeholder="你的邮箱地址" required /><button type="submit" aria-label="订阅好物来信"><i data-lucide="arrow-right"></i></button></form></section>
     </main>
     <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">拾</span><span>拾光好物</span></a><p>认真选，每天用。</p><div class="footer-links"><a href="#">配送说明</a><a href="#">售后服务</a><a href="#">联系我们</a></div><small>© 2026 拾光好物</small></footer>
-    <div class="mobile-dock" aria-label="移动端快捷导航"><a href="#top"><i data-lucide="home"></i><span>首页</span></a><a href="#popular"><i data-lucide="layout-grid"></i><span>分类</span></a><button class="search-trigger" type="button"><i data-lucide="search"></i><span>搜索</span></button><button class="cart-trigger" type="button"><i data-lucide="shopping-bag"></i><span>购物袋</span><b class="mobile-cart-count">0</b></button></div>
+    <div class="mobile-dock" aria-label="移动端快捷导航"><a href="#top"><i data-lucide="home"></i><span>首页</span></a><a href="#popular"><i data-lucide="layout-grid"></i><span>分类</span></a><button class="search-trigger" type="button"><i data-lucide="search"></i><span>搜索</span></button><button class="order-trigger" type="button"><i data-lucide="receipt-text"></i><span>订单</span><b class="mobile-order-count">0</b></button><button class="cart-trigger" type="button"><i data-lucide="shopping-bag"></i><span>购物袋</span><b class="mobile-cart-count">0</b></button></div>
     <div class="overlay" id="overlay" hidden></div>
     <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle"><div class="drawer-header"><div><p class="eyebrow">你的选择</p><h2 id="cartTitle">购物袋 <span id="cartTitleCount">(0)</span></h2></div><button class="icon-button drawer-close" type="button" aria-label="关闭购物车"><i data-lucide="x"></i></button></div><div class="shipping-progress"><p id="shippingMessage">再选 ¥299 即可包邮</p><div><span id="shippingBar"></span></div></div><div class="cart-items" id="cartItems"></div><div class="cart-empty" id="cartEmpty"><i data-lucide="shopping-bag"></i><h3>购物袋还是空的</h3><p>去挑一件能让日常更顺手的好物吧。</p><button class="secondary-button drawer-close" type="button">继续逛逛</button></div><div class="cart-summary" id="cartSummary" hidden><div><span>商品小计</span><strong id="cartSubtotal">¥0</strong></div><small>运费将在结算时计算</small><button class="checkout-button" type="button">去结算 <i data-lucide="arrow-right"></i></button></div></aside>
+    <aside class="cart-drawer orders-drawer" id="ordersDrawer" aria-hidden="true" aria-labelledby="ordersTitle">
+      <div class="drawer-header"><div><p class="eyebrow">本机订单台账</p><h2 id="ordersTitle">我的订单 <span id="ordersTitleCount">(0)</span></h2></div><button class="icon-button drawer-close" type="button" aria-label="关闭我的订单"><i data-lucide="x"></i></button></div>
+      <div class="orders-note"><i data-lucide="shield-check"></i><p>支付与履约均在天猫完成。本站只保存你确认的结果，不读取淘宝账号或支付信息。</p></div>
+      <div class="order-tools"><a href="https://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm" target="_blank" rel="noreferrer">淘宝/天猫订单中心 <i data-lucide="external-link"></i></a><button id="exportOrders" type="button"><i data-lucide="download"></i>导出记录</button></div>
+      <div class="orders-list" id="ordersList"></div>
+      <div class="cart-empty" id="ordersEmpty"><i data-lucide="receipt-text"></i><h3>还没有订单记录</h3><p>从购物袋前往官方店结算后，记录会出现在这里。</p><button class="secondary-button drawer-close" type="button">继续逛逛</button></div>
+    </aside>
+    <aside class="cart-drawer checkout-drawer" id="checkoutDrawer" aria-hidden="true" aria-labelledby="checkoutTitle">
+      <div class="drawer-header"><div><p class="eyebrow">官方店结算</p><h2 id="checkoutTitle">确认购买清单</h2></div><button class="icon-button drawer-close" type="button" aria-label="关闭结算"><i data-lucide="x"></i></button></div>
+      <div class="checkout-steps" aria-label="结算流程"><span class="active">1 选择官方店</span><span>2 天猫支付</span><span>3 返回确认</span></div>
+      <div class="orders-note checkout-note"><i data-lucide="info"></i><p>商品来自不同官方店，需要分别完成购买。最终规格、价格、运费和库存以天猫页面为准。</p></div>
+      <div class="checkout-items" id="checkoutItems"></div>
+      <div class="checkout-total"><span>本站参考金额</span><strong id="checkoutTotal">¥0 起</strong></div>
+      <small class="checkout-privacy">本站不会要求填写支付密码、银行卡或淘宝登录信息。</small>
+    </aside>
     <section class="search-panel" id="searchPanel" aria-hidden="true" aria-labelledby="searchTitle"><div class="search-panel-inner"><div class="search-header"><h2 id="searchTitle">找一件好物</h2><button class="icon-button search-close" type="button" aria-label="关闭搜索"><i data-lucide="x"></i></button></div><label class="search-field"><i data-lucide="search"></i><input id="searchInput" type="search" placeholder="试试“咖啡”、“香薰”或“出行”" autocomplete="off" /><kbd>ESC</kbd></label><div class="search-suggestions"><span>热门搜索</span><button type="button">保温杯</button><button type="button">咖啡</button><button type="button">香薰</button></div></div></section>
+    <dialog class="result-dialog" id="resultDialog" aria-labelledby="resultTitle">
+      <form id="resultForm">
+        <div class="result-dialog-head"><div><p class="eyebrow">结算结果</p><h2 id="resultTitle">已从天猫返回？</h2></div><button class="icon-button result-close" type="button" aria-label="关闭结果确认"><i data-lucide="x"></i></button></div>
+        <p class="result-product" id="resultProduct"></p>
+        <label>实际结果<select id="resultStatus"><option value="placed">已在天猫下单</option><option value="pending">稍后确认</option><option value="not_completed">未完成购买</option></select></label>
+        <label>天猫订单号 <span>选填，仅保存在本机</span><input id="resultOrderNumber" type="text" inputmode="numeric" autocomplete="off" placeholder="便于日后核对" maxlength="32" /></label>
+        <button class="checkout-button" type="submit">保存结果 <i data-lucide="check"></i></button>
+      </form>
+    </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </body>
 </html>

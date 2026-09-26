@@ -3,10 +3,67 @@
 /* Keep this archived storefront isolated from the newer clinical page overrides. */
 body { margin: 0; color: var(--ink); background: var(--paper); }
 .site-header .brand { color: var(--ink); }
+.brand-mark { background: var(--accent); }
 .site-footer .brand { color: #fff; }
 .toast { background: var(--ink); }
 .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; }
 
+.orders-button { min-height: 42px; display: inline-flex; align-items: center; gap: 7px; padding: 0 12px; border: 0; background: transparent; cursor: pointer; }
+.orders-button:hover { background: #e9e8e2; }
+.orders-button svg { width: 18px; }
+.order-count { display: grid; min-width: 20px; height: 20px; padding: 0 5px; place-items: center; border-radius: 10px; color: var(--ink); background: #dfded8; font-size: 11px; }
+.orders-note { display: flex; align-items: flex-start; gap: 11px; margin-top: 22px; padding: 14px; color: #365548; background: #e8f0eb; }
+.orders-note svg { flex: 0 0 auto; width: 19px; margin-top: 1px; }
+.orders-note p { margin: 0; font-size: 12px; line-height: 1.7; }
+.order-tools { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.order-tools a, .order-tools button { display: inline-flex; align-items: center; gap: 5px; border: 0; color: var(--green); background: transparent; font-size: 12px; cursor: pointer; }
+.order-tools svg { width: 14px; }
+.orders-list { flex: 1; overflow: auto; }
+.order-card { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.order-card-head, .order-card-product, .order-card-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.order-card-head { margin-bottom: 14px; }
+.order-card-head span { color: var(--muted); font-size: 11px; }
+.order-status { min-height: 29px; padding: 0 8px; border: 1px solid var(--line); background: #fff; font-size: 11px; }
+.order-card-product { align-items: flex-start; }
+.order-card-product img { width: 66px; height: 78px; object-fit: cover; }
+.order-card-product > div { flex: 1; min-width: 0; }
+.order-card-product h3 { margin: 1px 0 5px; font-size: 14px; }
+.order-card-product p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.order-card-product strong { white-space: nowrap; font-size: 14px; }
+.order-number-field { display: grid; gap: 6px; margin: 14px 0; color: var(--muted); font-size: 11px; }
+.order-number-field input { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--line); background: #fff; }
+.order-card-actions a { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; gap: 7px; padding: 0 13px; color: #fff; background: var(--ink); font-size: 12px; }
+.order-card-actions a:last-child { color: var(--ink); border: 1px solid var(--line); background: transparent; }
+.order-card-actions svg { width: 14px; }
+.checkout-steps { display: grid; grid-template-columns: repeat(3, 1fr); margin: 24px 0 0; border-bottom: 1px solid var(--line); }
+.checkout-steps span { padding: 0 2px 12px; color: var(--muted); font-size: 11px; text-align: center; }
+.checkout-steps .active { color: var(--accent); border-bottom: 2px solid var(--accent); font-weight: 700; }
+.checkout-note { margin-top: 18px; color: #654d1d; background: #f4eddc; }
+.checkout-items { flex: 1; overflow: auto; }
+.checkout-item { display: grid; grid-template-columns: 72px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.checkout-item img { width: 72px; height: 86px; object-fit: cover; }
+.checkout-item h3 { margin: 1px 0 5px; font-size: 14px; }
+.checkout-item p { margin: 0 0 12px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.official-checkout { width: 100%; min-height: 43px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; color: #fff; background: var(--accent); font-weight: 700; cursor: pointer; }
+.official-checkout:hover { background: var(--accent-dark); }
+.official-checkout svg { width: 17px; }
+.checkout-total { display: flex; justify-content: space-between; padding: 19px 0 8px; border-top: 1px solid var(--line); }
+.checkout-privacy { color: var(--muted); line-height: 1.5; }
+.result-dialog { width: min(440px, calc(100vw - 28px)); padding: 0; border: 0; background: var(--paper); box-shadow: var(--shadow); }
+.result-dialog::backdrop { background: rgb(12 14 13 / 62%); backdrop-filter: blur(2px); }
+.result-dialog form { padding: 28px; }
+.result-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; }
+.result-dialog h2 { margin: 0; font-family: "Songti SC", serif; font-size: 28px; }
+.result-product { margin: 18px 0; padding: 13px; background: #e9e8e2; font-size: 13px; }
+.result-dialog label { display: grid; gap: 7px; margin-bottom: 16px; font-size: 12px; font-weight: 700; }
+.result-dialog label span { color: var(--muted); font-size: 10px; font-weight: 400; }
+.result-dialog select, .result-dialog input { width: 100%; height: 44px; padding: 0 11px; border: 1px solid var(--line); background: #fff; }
+
 @media (max-width: 620px) {
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-header .orders-button { display: none; }
+  .mobile-dock { grid-template-columns: repeat(5, 1fr); }
+  .mobile-order-count { position: absolute; top: 6px; left: calc(50% + 7px); display: grid; min-width: 17px; height: 17px; place-items: center; border-radius: 10px; color: #fff; background: var(--green); font-size: 9px; }
+  .order-card-actions { align-items: stretch; flex-direction: column; }
+  .result-dialog form { padding: 22px 18px; }
 }
