@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "slug": "01-ugreen-cable",
+    "category": "出行",
+    "label": "出行数码",
+    "title_line_1": "绿联 USB-C",
+    "title_line_2": "编织数据线",
+    "name": "绿联 USB-C 编织数据线",
+    "price": 39,
+    "badge": "精选首发",
+    "desc": "日常充电与数据传输 · 规格以商品页为准",
+    "selling_points": ["日常充电与数据传输", "规格以商品页为准"],
+    "motif": "cable",
+    "source_url": "https://ugreen.tmall.com/",
+    "source_label": "绿联官方旗舰店"
+  },
+  {
+    "id": 2,
+    "slug": "04-deli-storage",
+    "category": "居家",
+    "label": "居家整理",
+    "title_line_1": "得力",
+    "title_line_2": "桌面收纳盒",
+    "name": "得力桌面收纳盒",
+    "price": 49,
+    "badge": "精选首发",
+    "desc": "文具与小物分类整理 · 下单前核对尺寸",
+    "selling_points": ["文具与小物分类整理", "下单前先核对尺寸"],
+    "motif": "storage",
+    "source_url": "https://deli.tmall.com/",
+    "source_label": "得力官方旗舰店"
+  }
+]

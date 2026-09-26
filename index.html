@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content="拾光好物，精选实用、耐看、经得住日常使用的生活好物。" />
+    <title>拾光好物｜认真选，每天用</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="./catalog.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement" role="status">
+      <span>今日下单 · 预计 48 小时内发货</span><span class="announcement-separator">·</span><span>满 ¥299 包邮</span>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="拾光好物首页"><span class="brand-mark">拾</span><span>拾光好物</span></a>
+      <nav class="desktop-nav" aria-label="主导航"><a href="#new">本周上新</a><a href="#popular">人气好物</a><a href="#story">我们的选择</a></nav>
+      <div class="header-actions">
+        <button class="icon-button search-trigger" type="button" aria-label="搜索商品" title="搜索"><i data-lucide="search"></i></button>
+        <button class="cart-button cart-trigger" type="button" aria-label="打开购物车"><i data-lucide="shopping-bag"></i><span class="cart-label">购物袋</span><span class="cart-count" aria-label="购物车商品数量">0</span></button>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=88" alt="晨光中的手冲咖啡与陶瓷杯" />
+        <div class="hero-shade"></div>
+        <div class="hero-content"><p class="eyebrow light">秋日生活提案</p><h1 id="hero-title">拾光好物</h1><p>认真挑选每一件，陪你把寻常日子过得更有质感。</p><a class="primary-button light-button" href="#popular"><span>逛本期精选</span><i data-lucide="arrow-right"></i></a></div>
+        <div class="hero-feature" aria-label="主推商品"><span>本期精选</span><strong>绿联 USB-C 编织数据线</strong><span>¥39 起 · 规格以商品页为准</span></div>
+      </section>
+      <section class="trust-strip" aria-label="购物保障">
+        <div><i data-lucide="package-check"></i><span><strong>源头直采</strong>精选产地与工厂</span></div>
+        <div><i data-lucide="badge-check"></i><span><strong>严选品质</strong>每批次抽样检验</span></div>
+        <div><i data-lucide="refresh-cw"></i><span><strong>无忧售后</strong>7 天放心退换</span></div>
+      </section>
+      <section class="section category-section" id="new">
+        <div class="section-heading"><div><p class="eyebrow">按场景发现</p><h2>今天，想把哪里变好一点？</h2></div><p>从晨间的一杯咖啡，到入夜的一盏灯。好用的东西，不必喧哗。</p></div>
+        <div class="category-grid">
+          <button class="category-tile" type="button" data-filter="居家"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=85" alt="明亮整洁的居家工作角" /><span>居家日用 <i data-lucide="arrow-up-right"></i></span></button>
+          <button class="category-tile tall" type="button" data-filter="餐厨"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1000&q=85" alt="摆放着新鲜食材的餐桌" /><span>餐厨好物 <i data-lucide="arrow-up-right"></i></span></button>
+          <button class="category-tile" type="button" data-filter="出行"><img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=900&q=85" alt="轻便的日常出行随身物品" /><span>轻松出行 <i data-lucide="arrow-up-right"></i></span></button>
+        </div>
+      </section>
+      <section class="section products-section" id="popular">
+        <div class="section-heading product-heading"><div><p class="eyebrow">口碑清单</p><h2>少而精的两件实用好物</h2></div><div class="filter-row" role="group" aria-label="商品分类筛选"><button class="filter-chip active" type="button" data-filter="全部">全部</button><button class="filter-chip" type="button" data-filter="居家">居家</button><button class="filter-chip" type="button" data-filter="出行">出行</button></div></div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden><i data-lucide="search-x"></i><h3>暂时没有找到</h3><p>换个关键词或分类试试。</p></div>
+      </section>
+      <section class="editorial" id="story">
+        <div class="editorial-image-wrap"><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1400&q=88" alt="自然光下的咖啡馆日常" /><span class="image-note">浙江 · 杭州</span></div>
+        <div class="editorial-copy"><p class="eyebrow">我们怎么选</p><h2>不是更多，<br />是更值得。</h2><p>我们从真实使用出发，看材质、看工艺，也看它能否经得住一天天的生活。每件上架的商品，都至少经过三轮试用和复核。</p><div class="editorial-stats"><div><strong>3轮</strong><span>实测体验</span></div><div><strong>28项</strong><span>选品标准</span></div><div><strong>4.9</strong><span>用户好评</span></div></div><a class="text-link" href="#popular">查看本月严选 <i data-lucide="arrow-right"></i></a></div>
+      </section>
+      <section class="reviews-section">
+        <div class="review-intro"><p class="eyebrow">真实使用者说</p><h2>“收到之后，确实会每天拿起来用。”</h2><div class="review-rating"><span>★★★★★</span><strong>4.9</strong><small>来自 2,836 条评价</small></div></div>
+        <div class="review-list"><article class="review-item"><p>“保温杯的开合手感很顺，通勤放包里完全不漏。颜色也比图片更耐看。”</p><footer><span>陈女士 · 上海</span><span>已购 随行保温杯</span></footer></article><article class="review-item"><p>“小夜灯亮度刚好，晚上起身不会刺眼。磁吸设计很方便，第二次买给父母。”</p><footer><span>周先生 · 成都</span><span>已购 感应小夜灯</span></footer></article></div>
+      </section>
+      <section class="newsletter"><div><p class="eyebrow light">每周一封好物来信</p><h2>新鲜到货，先告诉你。</h2></div><form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="email">邮箱地址</label><input id="email" name="email" type="email" placeholder="你的邮箱地址" required /><button type="submit" aria-label="订阅好物来信"><i data-lucide="arrow-right"></i></button></form></section>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">拾</span><span>拾光好物</span></a><p>认真选，每天用。</p><div class="footer-links"><a href="#">配送说明</a><a href="#">售后服务</a><a href="#">联系我们</a></div><small>© 2026 拾光好物</small></footer>
+    <div class="mobile-dock" aria-label="移动端快捷导航"><a href="#top"><i data-lucide="home"></i><span>首页</span></a><a href="#popular"><i data-lucide="layout-grid"></i><span>分类</span></a><button class="search-trigger" type="button"><i data-lucide="search"></i><span>搜索</span></button><button class="cart-trigger" type="button"><i data-lucide="shopping-bag"></i><span>购物袋</span><b class="mobile-cart-count">0</b></button></div>
+    <div class="overlay" id="overlay" hidden></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle"><div class="drawer-header"><div><p class="eyebrow">你的选择</p><h2 id="cartTitle">购物袋 <span id="cartTitleCount">(0)</span></h2></div><button class="icon-button drawer-close" type="button" aria-label="关闭购物车"><i data-lucide="x"></i></button></div><div class="shipping-progress"><p id="shippingMessage">再选 ¥299 即可包邮</p><div><span id="shippingBar"></span></div></div><div class="cart-items" id="cartItems"></div><div class="cart-empty" id="cartEmpty"><i data-lucide="shopping-bag"></i><h3>购物袋还是空的</h3><p>去挑一件能让日常更顺手的好物吧。</p><button class="secondary-button drawer-close" type="button">继续逛逛</button></div><div class="cart-summary" id="cartSummary" hidden><div><span>商品小计</span><strong id="cartSubtotal">¥0</strong></div><small>运费将在结算时计算</small><button class="checkout-button" type="button">去结算 <i data-lucide="arrow-right"></i></button></div></aside>
+    <section class="search-panel" id="searchPanel" aria-hidden="true" aria-labelledby="searchTitle"><div class="search-panel-inner"><div class="search-header"><h2 id="searchTitle">找一件好物</h2><button class="icon-button search-close" type="button" aria-label="关闭搜索"><i data-lucide="x"></i></button></div><label class="search-field"><i data-lucide="search"></i><input id="searchInput" type="search" placeholder="试试“咖啡”、“香薰”或“出行”" autocomplete="off" /><kbd>ESC</kbd></label><div class="search-suggestions"><span>热门搜索</span><button type="button">保温杯</button><button type="button">咖啡</button><button type="button">香薰</button></div></div></section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

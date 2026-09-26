@@ -1,0 +1,12 @@
+@import url("./base.css");
+
+/* Keep this archived storefront isolated from the newer clinical page overrides. */
+body { margin: 0; color: var(--ink); background: var(--paper); }
+.site-header .brand { color: var(--ink); }
+.site-footer .brand { color: #fff; }
+.toast { background: var(--ink); }
+.product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; }
+
+@media (max-width: 620px) {
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
